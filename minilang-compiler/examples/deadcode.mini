@@ -1,0 +1,16 @@
+// The condition folds to a compile-time constant 0, so the optimizer
+// should eliminate the "then" branch entirely and keep only the else branch.
+let a = 5;
+if (2 - 2) {
+    print 999;
+} else {
+    print 1;
+}
+
+// This while loop's condition is a compile-time-false constant, so the
+// whole loop is unreachable and should be dropped by the optimizer.
+while (1 - 1) {
+    print 888;
+}
+
+print a;

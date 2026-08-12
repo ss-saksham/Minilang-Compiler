@@ -1,0 +1,4 @@
+// Every operand here is a compile-time constant, so the optimizer
+// should fold this entire expression down to a single MOV of 42.
+let x = (2 + 3) * (10 - 2) + 2;
+print x;
